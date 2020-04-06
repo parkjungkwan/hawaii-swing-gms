@@ -4,6 +4,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
+	private String  test;
+	
+	
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
@@ -83,7 +86,7 @@ public class Engine {
 			case 6: 
 				kaup = new Kaup();
 				System.out.println("키 ?");
-				kaup.setHeight(scanner.nextDouble());
+				new Kaup().setHeight(scanner.nextDouble());
 				System.out.println("몸무게 ?");
 				kaup.setWeight(scanner.nextDouble());
 				System.out.println(kaup.calculate());

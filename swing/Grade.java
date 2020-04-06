@@ -69,6 +69,7 @@ public class Grade {
 	public String grade() {
 		String grade = "";
 		int average = average();
+		
 		if(average >= 90) {
 			grade = "A";
 		}else if(average >= 80){
