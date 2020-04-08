@@ -39,7 +39,7 @@ public class PhoneService {
 		phones[count] = phone;
 		count++;
 	}
-	public void addCelPhone(CelPhone phone) {
+	public void add(CelPhone phone) {
 		celPhones[count] = phone;
 		count++;
 	}

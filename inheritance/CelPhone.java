@@ -5,7 +5,8 @@ public class CelPhone extends Phone{
 	private String move;
 	public CelPhone(String phoneNumber, String name, String company, boolean portable) {
 		super(phoneNumber, name, company);
-		setPortable(portable);
+		this.portable=portable;
+		setPortable(this.portable);
 	}
 	
 	

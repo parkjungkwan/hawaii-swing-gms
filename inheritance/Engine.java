@@ -1,11 +1,8 @@
 package com.jse.inheritance;
-
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class Engine {
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
 		PhoneService phoneService = new PhoneService();
 		String message = "";
 		while(true) {
@@ -31,7 +28,7 @@ public class Engine {
 			case "3": 
 				for(int i=0;i<3;i++) {
 					String[] values = JOptionPane.showInputDialog("입력: phoneNumber, name, company").split(",");
-					phoneService.addCelPhone(new CelPhone(values[0],values[1],values[2], true));
+					phoneService.add(new CelPhone(values[0],values[1],values[2], true));
 				}
 				break;
 			case "4": 
