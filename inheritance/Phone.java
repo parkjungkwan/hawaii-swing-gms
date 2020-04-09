@@ -28,6 +28,11 @@ public class Phone {
 	public void setCompany(String company) {
 		this.company = company;
 	}
+	@Override
+	public String toString() {
+		return "Phone : phoneNumber=" + phoneNumber + ", name=" + name + ", company=" + company ;
+	}
+	
 	
 	
 }

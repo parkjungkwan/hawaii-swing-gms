@@ -3,6 +3,7 @@ package com.jse.inheritance;
 public class CelPhone extends Phone{
 	private boolean portable;
 	private String move;
+	private String finger;
 	public CelPhone(String phoneNumber, String name, String company, boolean portable) {
 		super(phoneNumber, name, company);
 		this.portable=portable;
@@ -26,4 +27,11 @@ public class CelPhone extends Phone{
 	public void setMove(String move) {
 		this.move = move;
 	}
+
+
+	@Override
+	public String toString() {
+		return super.toString() + ", portable=" + portable + ", move=" + move + ", finger=" + finger;
+	}
+	
 }
