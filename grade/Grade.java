@@ -17,18 +17,8 @@ package com.jse.grade;
  * */
 public class Grade {
 	private String name;
-	private int korean;
-	private int math;
-	private int english;
+	private int korean, english, math;
 	
-	
-	public Grade(String name,int korean,int english,int math) {
-		this.name = name;
-		this.korean = korean;
-		this.math = math;
-		this.english = english;
-	}
-
 	public void setName(String name) {
 		this.name = name;
 	}

@@ -20,7 +20,6 @@ public class GradeServcieImpl implements GradeService{
 	public void add(Grade grade) {
 		grades[count] = grade;
 		count++;
-		
 	}
 	@Override
 	public void setCount(int count) {
