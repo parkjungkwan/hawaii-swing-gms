@@ -10,4 +10,5 @@ public interface GradeService {
 	public int average(Grade grade);
 	public String record(Grade grade);
 	public String printGrades();
+	public String ranking();
 }

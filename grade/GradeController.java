@@ -19,7 +19,9 @@ public class GradeController {
 				gradeService.add(grade);
 			}
 			break;
-			case "2":System.out.println(gradeService.printGrades());break;
+			case "2":
+				JOptionPane.showMessageDialog(null, gradeService.printGrades());
+				break;
 			case "3":
 				System.out.println("총점별로 1, 2, 3등 이름 나열하기");
 			}

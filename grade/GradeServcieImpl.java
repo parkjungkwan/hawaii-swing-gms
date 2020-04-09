@@ -71,5 +71,38 @@ public class GradeServcieImpl implements GradeService{
 		}
 		return result;
 	}
+	@Override
+	public String ranking() {
+		grades = getGrades();
+		int a = total(grades[0]);
+		int y = total(grades[1]);
+		int z = total(grades[2]);
+		if (a > y && a>z) {
+			if (y > z ) {
+				System.out.println("1등 :" + grades[0].getName() + " 2등:" + grades[1].getName() + " 3등:"
+						+ grades[2].getName());
+			} else if (z > y) {
+				System.out.println("1등 :" + grades[0].getName() + " 2등:" + grades[2].getName() + " 3등:"
+						+ grades[1].getName());
+			}
+		} else if (y > a && y>z) {
+			if (a > z) {
+				System.out.println("1등 :" + grades[1].getName() + " 2등:" + grades[0].getName() + " 3등:"
+						+ grades[2].getName());
+			} else if (z > a) {
+				System.out.println("1등 :" + grades[1].getName() + " 2등:" + grades[2].getName() + " 3등:"
+						+ grades[0].getName());
+			}
+		} else if (z > y && z>a) {
+			if (y > a) {
+				System.out.println("1등 :" + grades[2].getName() + " 2등:" + grades[1].getName() + " 3등:"
+						+ grades[0].getName());
+			} else if (a > y) {
+				System.out.println("1등 :" + grades[2].getName() + " 2등:" + grades[0].getName() + " 3등:"
+						+ grades[1].getName());
+			}
+		}
+		return null;
+	}
 	
 }
