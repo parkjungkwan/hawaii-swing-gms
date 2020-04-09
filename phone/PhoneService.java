@@ -1,4 +1,4 @@
-package com.jse.inheritance;
+package com.jse.phone;
 
 public class PhoneService {
 	private Phone[] phones;

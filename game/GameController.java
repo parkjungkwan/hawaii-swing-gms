@@ -1,9 +1,12 @@
-package com.jse.app;
+package com.jse.game;
 
 import java.util.Random;
 import java.util.Scanner;
+import com.jse.member.Member;
+import com.jse.member.Kaup;
+import com.jse.util.Calculator;
 
-public class Engine {
+public class GameController {
 	private String  test;
 	
 	
@@ -30,14 +33,14 @@ public class Engine {
 				System.out.println("회원가입");
 				System.out.println("아이디 입력");
 				String userid = scanner.next();
-				member.setId(userid);
+				member.setUserid(userid);
 
 				break;
 			case 2:
 				System.out.println("로그인");
 				System.out.println("아이디 입력");
 				String id2 = scanner.next();
-				String returnId = member.getId();
+				String returnId = member.getUserid();
 				System.out.println("로그인된 아이디: " + returnId);
 				if (id2.equals(returnId)) {
 					System.out.println("로그인 성공");

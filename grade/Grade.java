@@ -1,4 +1,4 @@
-package com.jse.swing;
+package com.jse.grade;
 
 /*
 클라이언트에서 프로그램 개발 요청이 왔습니다. 
@@ -15,14 +15,14 @@ package com.jse.swing;
 50점 미만이면 F 학점입니다
 라고 출력되게 해주세요
  * */
-public class GradeBean {
+public class Grade {
 	private String name;
 	private int korean;
 	private int math;
 	private int english;
 	
 	
-	public GradeBean(String name,int korean,int english,int math) {
+	public Grade(String name,int korean,int english,int math) {
 		this.name = name;
 		this.korean = korean;
 		this.math = math;
@@ -60,38 +60,11 @@ public class GradeBean {
 	public int getEnglish() {
 		return english;
 	}
+	
 
-	public int total() {
-		return korean + english + math;
-	}
-
-	public int average() {
-		return total() / 3;
-	}
-	public String grade2() {
-		String grade = "";
-		
-		return grade;
-	}
-
-	public String grade() {
-		String grade = "";
-		int average = average();
-		
-		if(average >= 90) {
-			grade = "A";
-		}else if(average >= 80){
-			grade = "B";
-		}else if(average >= 70){
-			grade = "C";
-		}else if(average >= 60){
-			grade = "D";
-		}else if(average >= 50){
-			grade = "E";
-		}else {
-			grade = "F";
-		}
-		return grade;
+	@Override
+	public String toString() {
+		return "Grade [name=" + name + ", korean=" + korean + ", math=" + math + ", english=" + english + "]";
 	}
 
 }

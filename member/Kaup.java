@@ -1,4 +1,4 @@
-package com.jse.app;
+package com.jse.member;
 /*
 개발자님 키와 몸무게를 이용하여
 카우푸지수를 구하고 

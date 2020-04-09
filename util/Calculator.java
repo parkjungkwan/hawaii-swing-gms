@@ -1,4 +1,4 @@
-package com.jse.app;
+package com.jse.util;
 
 public class Calculator {
 	private int num1;

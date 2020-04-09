@@ -1,16 +1,16 @@
-package com.jse.arr;
+package com.jse.card;
 
 public class CardService {
-	private CardBean[] cards;
+	private Card[] cards;
 	private int count;
 	public CardService() {
-		cards = new CardBean[3];
+		cards = new Card[3];
 		count = 0;
 	}
-	public void setCards(CardBean[] cards) {
+	public void setCards(Card[] cards) {
 		this.cards = cards;
 	}
-	public CardBean[] getCards() {
+	public Card[] getCards() {
 		return cards;
 	}
 	public void setCount(int count) {
@@ -19,7 +19,7 @@ public class CardService {
 	public int getCount() {
 		return count;
 	}
-	public void add(CardBean card) {
+	public void add(Card card) {
 		cards[count] = card;
 		count++;
 	}

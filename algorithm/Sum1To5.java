@@ -1,4 +1,4 @@
-package com.jse.app;
+package com.jse.algorithm;
 
 public class Sum1To5 {
 	public static void main(String[] args) {

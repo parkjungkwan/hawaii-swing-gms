@@ -1,11 +1,11 @@
-package com.jse.swing;
+package com.jse.member;
 
-public class MemberBean {
+public class Member {
 	private String userid;
 	private String passwd;
 	private String name;
 	private int age;
-	public MemberBean() {
+	public Member() {
 		
 	}
 	public String getUserid() {

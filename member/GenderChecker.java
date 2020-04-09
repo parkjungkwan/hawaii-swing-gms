@@ -1,4 +1,4 @@
-package com.jse.app;
+package com.jse.member;
 import java.util.Scanner;
 public class GenderChecker {
 	public static void main(String[] args) {
