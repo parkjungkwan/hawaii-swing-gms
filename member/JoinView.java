@@ -16,7 +16,12 @@ public class JoinView extends JFrame implements ActionListener{
 	JLabel[] labels;
 	JTextField[] textFields;
 	JPanel panel;
+	MemberService memberService;
+	public JoinView() {
+		memberService = new MemberServiceImpl();
+	}
 	public void open() {
+		
 		this.setSize(500, 500);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel = new JPanel();
@@ -54,8 +59,31 @@ public class JoinView extends JFrame implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
 		if(e.getSource() == saveButton) {
-			JOptionPane.showMessageDialog(this, textFields[0].getText());
+			textFields[0].setText("홍길동,유관순,이순신,신사임당,이도");
+			textFields[1].setText("hong,you,lee,shin,leedo");
+			textFields[2].setText("1,1,1,1,1");
+			textFields[3].setText("900101-1,960101-2,980101-1,011010-4,020606-3");
+			JOptionPane.showMessageDialog(this, 
+					String.format("%s / %s / %s / %s", 
+					textFields[0].getText(),
+					textFields[1].getText(),
+					textFields[2].getText(),
+					textFields[3].getText()));
+			String[] data = String.format("%s / %s / %s / %s", 
+					textFields[0].getText(),
+					textFields[1].getText(),
+					textFields[2].getText(),
+					textFields[3].getText()).split("/");
+			
+			String[] names = data[0].split(",");
+			// 각 스플릿을 통해 담는다
+			Member[] members = memberService.getMemebers();
+			for(int i=0;i < members.length; i++) {
+				System.out.println(members[i].toString());
+			}
+			
 		}else if(e.getSource() == cancelButton) {
 			
 		}
