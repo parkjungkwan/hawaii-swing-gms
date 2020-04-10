@@ -1,0 +1,53 @@
+package com.jse.member;
+import java.awt.*;
+import javax.swing.*;
+public class Ex2 {
+	public static void main(String[] args) {
+		
+		JFrame frame = new JFrame("회원가입");
+		frame.setSize(500, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //static이라 참조변수로 가지고오면 안된다???
+		frame.setVisible(true);
+		
+		JPanel panel = new JPanel();
+		frame.add(panel);
+		JLabel l1 = new JLabel("이름");
+		JLabel l2 = new JLabel("아이디");
+		JLabel l3 = new JLabel("패스워드");
+		JLabel l4 = new JLabel("주소");
+		JLabel l5 = new JLabel("추가사항");
+	   panel.add(l1);
+	   panel.add(l2);
+	   panel.add(l3);
+	   panel.add(l4);
+	   panel.add(l5);
+	   TextField t1 = new TextField();
+	   TextField t2 = new TextField();
+	   TextField t3 = new TextField();
+	   TextField t4 = new TextField();
+	   TextField t5 = new TextField();
+	   panel.add(t1);
+	   panel.add(t2);
+	   panel.add(t3);
+	   panel.add(t4);
+	   panel.add(t5);
+	   JButton b1 = new JButton("저장");
+	   JButton b2 = new JButton("취소");
+	   panel.add(b1); panel.add(b2);
+	  
+	   l1.setBounds(40,10,40,40);
+	  l2.setBounds(40,50,40,40);
+	  l3.setBounds(40,90,60,40);
+	  l4.setBounds(40,130,40,40);
+	  l5.setBounds(40,170,60,40);
+	   t1.setBounds(120,10,200,30);
+	   t2.setBounds(120,50,200,30);
+	   t3.setBounds(120,90,200,30);
+	   t4.setBounds(120,130,280,30);
+	   t5.setBounds(120,180,280,120);
+	   b1.setBounds(125, 330, 80, 30);
+	   b2.setBounds(240, 330, 80, 30);
+	
+		
+	}
+		}

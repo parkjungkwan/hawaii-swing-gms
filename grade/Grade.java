@@ -1,5 +1,7 @@
 package com.jse.grade;
 
+import lombok.Data;
+
 /*
 클라이언트에서 프로그램 개발 요청이 왔습니다. 
 이름과 국,영,수 세과목점수를 입력받아서
@@ -15,46 +17,9 @@ package com.jse.grade;
 50점 미만이면 F 학점입니다
 라고 출력되게 해주세요
  * */
+@Data
 public class Grade {
 	private String name;
 	private int korean, english, math;
 	
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setKorean(int korean) {
-		this.korean = korean;
-	}
-
-	public int getKorean() {
-		return korean;
-	}
-
-	public void setMath(int math) {
-		this.math = math;
-	}
-
-	public int getMath() {
-		return math;
-	}
-
-	public void setEnglish(int english) {
-		this.english = english;
-	}
-
-	public int getEnglish() {
-		return english;
-	}
-	
-
-	@Override
-	public String toString() {
-		return "Grade [name=" + name + ", korean=" + korean + ", math=" + math + ", english=" + english + "]";
-	}
-
 }

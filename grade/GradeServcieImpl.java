@@ -62,7 +62,6 @@ public class GradeServcieImpl implements GradeService{
 	public String printGrades() {
 		String result = "";
 		for(int i=0;i<3;i++) {
-			Grade[] grades = getGrades();
 			result += String.format("[%s : 총점 %d 점, 평균 %d 점,학점 : %s] \n",
 					grades[i].getName(),
 					total(grades[i]),
@@ -73,7 +72,6 @@ public class GradeServcieImpl implements GradeService{
 	}
 	@Override
 	public String ranking() {
-		grades = getGrades();
 		int a = total(grades[0]);
 		int y = total(grades[1]);
 		int z = total(grades[2]);
