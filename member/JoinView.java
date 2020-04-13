@@ -29,7 +29,7 @@ public class JoinView extends JFrame implements ActionListener{
 		this.setVisible(true);
 		labels = new JLabel[5];
 		textFields = new JTextField[5];
-		String[] names = {"이름","아이디","패스워드","SSN","추가사항"};
+		String[] names = {"이름","아이디","패스워드","SSN","주소"};
 		for(int i=0;i < names.length;i++) {
 			labels[i] = new JLabel(names[i]);
 			panel.add(labels[i]);
@@ -65,29 +65,29 @@ public class JoinView extends JFrame implements ActionListener{
 			textFields[1].setText("hong,you,lee,shin,leedo");
 			textFields[2].setText("1,1,1,1,1");
 			textFields[3].setText("900101-1,960101-2,980101-1,011010-4,020606-3");
-			String data = String.format("%s / %s / %s / %s", 
+			textFields[4].setText("서울,서울,서울,부산,부산");
+			String data = String.format("%s / %s / %s / %s / %s", 
 					textFields[0].getText(),
 					textFields[1].getText(),
 					textFields[2].getText(),
-					textFields[3].getText());
-			String[][] mtx = new String[4][5];
-			System.out.println("matrix start");
+					textFields[3].getText(),
+					textFields[4].getText());
 			String[] arr = data.split("/");
-			for(int i=0;i< arr.length; i++) {
-				String[] t = arr[i].split(",");
-				for(int j=0;j< t.length; j++) {
-					mtx[i][j] =  t[j];
-				}
-				System.out.println();
+			Member[] members = new Member[5];
+			String[] names = arr[0].split(",");
+			String[] userids = arr[1].split(",");
+			String[] passwords = arr[2].split(",");
+			String[] ssns = arr[3].split(",");
+			String[] addrs = arr[4].split(",");
+			for(int i=0;i< 5; i++) {
+				members[i] = new Member();
+				members[i].setName(names[i]);
+				members[i].setUserid(userids[i]);
+				members[i].setPasswd(passwords[i]);
+				members[i].setSsn(ssns[i]);
+				members[i].setAddr(addrs[i]);
+				memberService.add(members[i]);
 			}
-			
-			for(int i=0;i< arr.length; i++) {
-				for(int j=0;j< mtx[i].length; j++) {
-					System.out.println(mtx[i][j]);
-				}
-				System.out.println();
-			}
-			System.out.println("matrix end");
 			
 		}else if(e.getSource() == cancelButton) {
 			

@@ -16,6 +16,8 @@ public class MemberServiceImpl implements MemberService{
 	}
 	@Override
 	public void add(Member member) {
+		System.out.println("서비스로 들어온 멤버");
+		System.out.println(member);
 		members[count] = member;
 		count++;
 	}
