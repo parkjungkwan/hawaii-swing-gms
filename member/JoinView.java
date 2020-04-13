@@ -100,10 +100,13 @@ public class JoinView extends JFrame implements ActionListener{
 				members[i].setAddr(addrs[i]);
 				memberService.add(members[i]);
 			}
-			
 		}else if(e.getSource() == listButton) {
 			JOptionPane.showMessageDialog(this, "클릭 !!");
-			
+			Member[] members = memberService.getMemebers();
+			for(int i=0;i< members.length; i++) {
+				System.out.println("화면 목록 결과");
+				System.out.println(members);
+			}
 			
 			
 		}

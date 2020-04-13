@@ -11,13 +11,11 @@ public class MemberServiceImpl implements MemberService{
 		this.members = members;
 	}
 	@Override
-	public Member[] getMemebers() {
+	public Member[] getMemebers() { 
 		return members;
 	}
 	@Override
 	public void add(Member member) {
-		System.out.println("서비스로 들어온 멤버");
-		System.out.println(member);
 		members[count] = member;
 		count++;
 	}
