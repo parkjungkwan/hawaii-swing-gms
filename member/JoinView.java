@@ -65,24 +65,29 @@ public class JoinView extends JFrame implements ActionListener{
 			textFields[1].setText("hong,you,lee,shin,leedo");
 			textFields[2].setText("1,1,1,1,1");
 			textFields[3].setText("900101-1,960101-2,980101-1,011010-4,020606-3");
-			JOptionPane.showMessageDialog(this, 
-					String.format("%s / %s / %s / %s", 
+			String data = String.format("%s / %s / %s / %s", 
 					textFields[0].getText(),
 					textFields[1].getText(),
 					textFields[2].getText(),
-					textFields[3].getText()));
-			String[] data = String.format("%s / %s / %s / %s", 
-					textFields[0].getText(),
-					textFields[1].getText(),
-					textFields[2].getText(),
-					textFields[3].getText()).split("/");
-			
-			String[] names = data[0].split(",");
-			// 각 스플릿을 통해 담는다
-			Member[] members = memberService.getMemebers();
-			for(int i=0;i < members.length; i++) {
-				System.out.println(members[i].toString());
+					textFields[3].getText());
+			String[][] mtx = new String[4][5];
+			System.out.println("matrix start");
+			String[] arr = data.split("/");
+			for(int i=0;i< arr.length; i++) {
+				String[] t = arr[i].split(",");
+				for(int j=0;j< t.length; j++) {
+					mtx[i][j] =  t[j];
+				}
+				System.out.println();
 			}
+			
+			for(int i=0;i< arr.length; i++) {
+				for(int j=0;j< mtx[i].length; j++) {
+					System.out.println(mtx[i][j]);
+				}
+				System.out.println();
+			}
+			System.out.println("matrix end");
 			
 		}else if(e.getSource() == cancelButton) {
 			
