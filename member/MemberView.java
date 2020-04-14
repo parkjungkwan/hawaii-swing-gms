@@ -19,7 +19,7 @@ public class MemberView extends JFrame implements ActionListener{
     private JTextField nameText, useridText, passwordText, ssnText,
     					addrText; 
     private JTextArea resultText; 
-    private JButton submitButton, listButton; 
+    private JButton submitButton, listButton, loginButton; 
     public MemberService memberService;
     public void open(){ 
         memberService = new MemberServiceImpl();
@@ -111,6 +111,13 @@ public class MemberView extends JFrame implements ActionListener{
         listButton.setLocation(270, 450); 
         listButton.addActionListener(this);
         container.add(listButton); 
+        
+        loginButton = new JButton("Login"); 
+        loginButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        loginButton.setSize(100, 20); 
+        loginButton.setLocation(390, 450); 
+        loginButton.addActionListener(this);
+        container.add(loginButton); 
   
         resultText = new JTextArea(); 
         resultText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
@@ -132,7 +139,7 @@ public class MemberView extends JFrame implements ActionListener{
 			passwordText.setText("1,1,1,1,1");
 			ssnText.setText("900101-1,960101-2,980101-1,011010-4,020606-3");
 			addrText.setText("서울,서울,서울,부산,부산");
-			String data = String.format("%s / %s / %s / %s / %s", 
+			String data = String.format("%s/%s/%s/%s/%s", 
 					nameText.getText(),
 					useridText.getText(),
 					passwordText.getText(),
@@ -166,6 +173,19 @@ public class MemberView extends JFrame implements ActionListener{
 			ssnText.setText("");
 			addrText.setText("");
 			resultText.setText(result);
+		}else if(e.getSource() == loginButton) {
+			JOptionPane.showMessageDialog(this, "Log in :" + useridText.getText() 
+			+ ","+ passwordText.getText());
+			Member member = new Member();
+			member.setUserid(useridText.getText());
+			member.setPasswd(passwordText.getText());
+			Member returnMember =memberService.login(member);
+			if(returnMember != null) {
+				resultText.setText(returnMember.toString());
+			}else {
+				resultText.setText("로그인 실패");
+			}
+			
 		}
 		
 	}
