@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class JoinView extends JFrame implements ActionListener{
+public class MemberView extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	JButton saveButton, listButton, loginButton;
 	JLabel[] labels;
@@ -20,7 +20,7 @@ public class JoinView extends JFrame implements ActionListener{
 	JTextArea textArea;
 	JPanel panel;
 	MemberService memberService;
-	public JoinView() {
+	public MemberView() {
 		memberService = new MemberServiceImpl();
 	}
 	public void open() {
@@ -85,14 +85,14 @@ public class JoinView extends JFrame implements ActionListener{
 					textFields[3].getText(),
 					textFields[4].getText());
 			String[] arr = data.split("/");
-			Member[] members = new Member[5];
 			String[] names = arr[0].split(",");
 			String[] userids = arr[1].split(",");
 			String[] passwords = arr[2].split(",");
 			String[] ssns = arr[3].split(",");
 			String[] addrs = arr[4].split(",");
+			Member[] members = new Member[5];
 			for(int i=0;i< 5; i++) {
-				members[i] = new Member();
+				members[i] = new Member(); // Member m = new Member()
 				members[i].setName(names[i]);
 				members[i].setUserid(userids[i]);
 				members[i].setPasswd(passwords[i]);
@@ -101,14 +101,17 @@ public class JoinView extends JFrame implements ActionListener{
 				memberService.add(members[i]);
 			}
 		}else if(e.getSource() == listButton) {
-			JOptionPane.showMessageDialog(this, "클릭 !!");
 			Member[] members = memberService.getMemebers();
+			String result = "";
 			for(int i=0;i< members.length; i++) {
-				System.out.println("화면 목록 결과");
-				System.out.println(members);
+				result += (members[i]+"\n");
 			}
-			
-			
+			textFields[0].setText("");
+			textFields[1].setText("");
+			textFields[2].setText("");
+			textFields[3].setText("");
+			textFields[4].setText("");
+			textArea.setText(result);
 		}
 		
 	}

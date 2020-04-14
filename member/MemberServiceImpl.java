@@ -11,7 +11,7 @@ public class MemberServiceImpl implements MemberService{
 		this.members = members;
 	}
 	@Override
-	public Member[] getMemebers() { 
+	public Member[] getMemebers() {   
 		return members;
 	}
 	@Override
