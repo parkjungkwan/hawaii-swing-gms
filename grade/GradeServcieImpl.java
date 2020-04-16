@@ -19,8 +19,16 @@ public class GradeServcieImpl implements GradeService{
 	}
 	@Override
 	public Grade detail(Grade grade) {
-		// TODO Auto-generated method stub
-		return null;
+		Grade returnGrade = new Grade();
+		for(int i=0; i<grades.length; i++) {
+			if(grade==grades[i]) {
+				
+			 returnGrade=grades[i];
+				
+			}
+		}
+		
+		return returnGrade;
 	}
 	
 	@Override
