@@ -18,7 +18,7 @@ public class CardController {
 			}
 			break;
 			case 2: 
-				Card[] cards = service.getCards();
+				Card[] cards = service.list();
 				for(int i=0;i<3;i++) {
 					System.out.println(String.format("카드모양 %s 카드넘버 %d ", 
 							cards[i].getKind(), cards[i].getNumber()));
